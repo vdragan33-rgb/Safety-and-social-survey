@@ -1,0 +1,5 @@
+-- Run once in Supabase > SQL Editor to create the first administrator.
+-- Replace the address with yours (lower case). After that, manage everyone from the app.
+insert into public.allowed_emails (email, role)
+values ('you@example.com', 'admin')
+on conflict (email) do update set role = 'admin';
